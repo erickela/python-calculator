@@ -1,0 +1,21 @@
+class Smartphone:
+    def __init__(self, brand, model, storage, battery_capacity):
+        self.brand = brand
+        self.model = model
+        self.storage = storage  # in GB
+        self.battery_capacity = battery_capacity  # in mAh
+    
+    def display_info(self):
+        print(f"Smartphone Info: {self.brand} {self.model}")
+        print(f"Storage: {self.storage} GB")
+        print(f"Battery Capacity: {self.battery_capacity} mAh")
+    
+    def make_call(self, phone_number):
+        print(f"Calling {phone_number}...")
+    
+    def send_message(self, phone_number, message):
+        print(f"Sending message to {phone_number}: {message}")
+    
+    def charge(self, amount):
+        self.battery_capacity += amount
+        print(f"Charging... Battery now at {self.battery_capacity} mAh")
