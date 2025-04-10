@@ -1,0 +1,30 @@
+def read_and_modify_file():
+    # Ask the user for a filename
+    filename = input("Enter the name of the file to read from: ")
+
+    try:
+        # Try to open and read the file
+        with open(filename, 'r') as file:
+            content = file.read()
+
+        # Modify the content (Example: convert to uppercase)
+        modified_content = content.upper()
+
+        # Define a new filename to write the modified content
+        new_filename = "modified_" + filename
+
+        # Write the modified content to a new file
+        with open(new_filename, 'w') as new_file:
+            new_file.write(modified_content)
+
+        print(f"✅ File processed successfully. Modified content saved to '{new_filename}'.")
+
+    except FileNotFoundError:
+        print(f"❌ Error: The file '{filename}' was not found.")
+    except PermissionError:
+        print(f"❌ Error: Permission denied when trying to read '{filename}'.")
+    except Exception as e:
+        print(f"⚠️ An unexpected error occurred: {e}")
+
+# Run the function
+read_and_modify_file()
